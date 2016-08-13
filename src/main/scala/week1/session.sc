@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+
 def not(x: Boolean): Boolean = if (x) false else true
 def and(x: Boolean, y: => Boolean): Boolean = if (x) y else false
 def or(x: Boolean, y: => Boolean): Boolean = if (x) true else y
@@ -40,12 +42,14 @@ def sqrt(x: Double): Double = {
 
 sqrt(2)
 
+@tailrec
 def gcd(a: Int, b: Int): Int =
   if (b == 0) a else gcd(b, a % b)
 
 gcd(14, 21)
 
 def factorial(n: Int): Int = {
+  @tailrec
   def loop(n: Int, acc: Int): Int =
     if (n == 0) acc
     else loop(n - 1, n * acc)
