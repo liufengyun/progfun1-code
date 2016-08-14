@@ -2,6 +2,8 @@ import java.lang.Math._
 
 import scala.annotation.tailrec
 
+
+// High-Order functions
 def sum(f: Int => Int)(a: Int, b: Int): Int = {
   @tailrec
   def loop(a: Int, acc: Int): Int = {
@@ -13,6 +15,7 @@ def sum(f: Int => Int)(a: Int, b: Int): Int = {
 
 sum(x => x)(1, 10)
 
+// Using anonymous functions in argument
 def sumInts: (Int, Int) => Int = sum(x => x)
 def sumCubes: (Int, Int) => Int = sum(x => x * x * x)
 sumInts(1, 10)
@@ -53,6 +56,7 @@ prod(1, 5)
 def fact(n: Int): Int = prod(1, n)
 fact(5)
 
+// EXAMPLE -- Finding fixed point
 val tolerance = 0.0001
 def isCloseEnough(x: Double, y: Double): Boolean = abs((x - y) / x) / x < tolerance
 
