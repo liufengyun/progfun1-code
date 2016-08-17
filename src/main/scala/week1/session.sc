@@ -1,59 +1,63 @@
 import scala.annotation.tailrec
 
-def not(x: Boolean): Boolean = if (x) false else true
-def and(x: Boolean, y: => Boolean): Boolean = if (x) y else false
-def or(x: Boolean, y: => Boolean): Boolean = if (x) true else y
+object session {
 
-not(true)
-not(false)
+  def not(x: Boolean): Boolean = if (x) false else true
+  def and(x: Boolean, y: => Boolean): Boolean = if (x) y else false
+  def or(x: Boolean, y: => Boolean): Boolean = if (x) true else y
 
-and(true, true)
-and(true, false)
-and(false, true)
-and(false, false)
+  not(true)
+  not(false)
 
-or(true, true)
-or(true, false)
-or(false, true)
-or(false, false)
+  and(true, true)
+  and(true, false)
+  and(false, true)
+  and(false, false)
 
-def loop: Boolean = loop
+  or(true, true)
+  or(true, false)
+  or(false, true)
+  or(false, false)
 
-// these functions calls will terminate
-// because the second parameter is called by name
-and(false, loop)
-or(true, loop)
+  def loop: Boolean = loop
 
-def abs(x: Double): Double = if (x < 0) -x else x
+  // these functions calls will terminate
+  // because the second parameter is called by name
+  and(false, loop)
+  or(true, loop)
 
-def sqrt(x: Double): Double = {
-  def sqrtIter(guess: Double): Double =
-    if (isGoodEnough(guess)) guess
-    else sqrtIter(improve(guess))
+  def abs(x: Double): Double = if (x < 0) -x else x
 
-  def isGoodEnough(guess: Double): Boolean =
-    abs(guess * guess - x) / x < 0.001
+  def sqrt(x: Double): Double = {
+    def sqrtIter(guess: Double): Double =
+      if (isGoodEnough(guess)) guess
+      else sqrtIter(improve(guess))
 
-  def improve(guess: Double): Double =
-    (guess + x / guess) / 2
+    def isGoodEnough(guess: Double): Boolean =
+      abs(guess * guess - x) / x < 0.001
 
-  sqrtIter(1.0)
-}
+    def improve(guess: Double): Double =
+      (guess + x / guess) / 2
 
-sqrt(2)
+    sqrtIter(1.0)
+  }
 
-@tailrec
-def gcd(a: Int, b: Int): Int =
-  if (b == 0) a else gcd(b, a % b)
+  sqrt(2)
 
-gcd(14, 21)
-
-def factorial(n: Int): Int = {
   @tailrec
-  def loop(n: Int, acc: Int): Int =
-    if (n == 0) acc
-    else loop(n - 1, n * acc)
-  loop(n, 1)
-}
+  def gcd(a: Int, b: Int): Int =
+    if (b == 0) a else gcd(b, a % b)
 
-factorial(5)
+  gcd(14, 21)
+
+  def factorial(n: Int): Int = {
+    @tailrec
+    def loop(n: Int, acc: Int): Int =
+      if (n == 0) acc
+      else loop(n - 1, n * acc)
+    loop(n, 1)
+  }
+
+  factorial(5)
+
+}
