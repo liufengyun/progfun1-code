@@ -18,7 +18,9 @@ object functions {
 
   // Using anonymous functions in argument
   def sumInts: (Int, Int) => Int = sum(x => x)
+
   def sumCubes: (Int, Int) => Int = sum(x => x * x * x)
+
   sumInts(1, 10)
   sumCubes(1, 10)
 
@@ -32,11 +34,14 @@ object functions {
   }
 
   def productInts: (Int, Int) => Int = product(x => x)
+
   def productCubes: (Int, Int) => Int = product(x => x * x * x)
+
   productInts(1, 10)
   productCubes(1, 10)
 
   def factorial(n: Int): Int = product(x => x)(1, n)
+
   factorial(5)
 
   def mapReduce(f: Int => Int, combine: (Int, Int) => Int, zero: Int)(a: Int, b: Int): Int = {
@@ -49,16 +54,20 @@ object functions {
   }
 
   def su: (Int, Int) => Int = mapReduce(x => x, (x, y) => x + y, 0)
+
   su(1, 5)
 
   def prod: (Int, Int) => Int = mapReduce(x => x, (x, y) => x * y, 1)
+
   prod(1, 5)
 
   def fact(n: Int): Int = prod(1, n)
+
   fact(5)
 
   // EXAMPLE -- Finding fixed point
   val tolerance = 0.0001
+
   def isCloseEnough(x: Double, y: Double): Boolean = abs((x - y) / x) / x < tolerance
 
   def fixedPoint(f: Double => Double)(firstGuess: Double) = {
@@ -73,7 +82,9 @@ object functions {
   fixedPoint(x => 1 + x / 2)(1.0)
 
   def averageDamp(f: Double => Double)(x: Double) = (x + f(x)) / 2
+
   def sqrt(x: Double) = fixedPoint(averageDamp(y => x / y))(1.0)
+
   sqrt(4)
   sqrt(2)
 

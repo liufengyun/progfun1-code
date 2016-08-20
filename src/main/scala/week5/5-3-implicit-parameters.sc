@@ -1,5 +1,3 @@
-package week5
-
 import math.Ordering
 
 object mergesort2 {

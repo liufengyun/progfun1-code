@@ -1,5 +1,3 @@
-package week5
-
 object mergesort {
 
   def msort(xs: List[Int]): List[Int] = {

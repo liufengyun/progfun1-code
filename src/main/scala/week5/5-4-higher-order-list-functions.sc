@@ -1,5 +1,3 @@
-package week5
-
 object lecture4 {
 
   //
@@ -7,7 +5,7 @@ object lecture4 {
   //
 
   def scaleList(xs: List[Double], factor: Double): List[Double] = xs match {
-    case Nil     => xs
+    case Nil => xs
     case y :: ys => y * factor :: scaleList(ys, factor)
   }
 
@@ -33,9 +31,10 @@ object lecture4 {
 
   // Exercise
   def squareList(xs: List[Int]): List[Int] = xs match {
-    case Nil     => Nil
+    case Nil => Nil
     case y :: ys => y * y :: squareList(ys)
   }
+
   def squareList2(xs: List[Int]): List[Int] = xs map (x => x * x)
 
   squareList(List(2, 3, 5))
@@ -48,7 +47,7 @@ object lecture4 {
   val nums = List(2, -4, 5, 7, 1)
 
   def posElems(xs: List[Int]): List[Int] = xs match {
-    case Nil     => xs
+    case Nil => xs
     case y :: ys => if (y > 0) y :: posElems(ys) else posElems(ys)
   }
 
