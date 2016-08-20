@@ -3,7 +3,9 @@ import scala.annotation.tailrec
 object session {
 
   def not(x: Boolean): Boolean = if (x) false else true
+
   def and(x: Boolean, y: => Boolean): Boolean = if (x) y else false
+
   def or(x: Boolean, y: => Boolean): Boolean = if (x) true else y
 
   not(true)
