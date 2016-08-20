@@ -1,30 +1,28 @@
-package week5
-
 object lecture1 {
 
   // Implementation of 'last' (slides 3-7)
   def last[T](xs: List[T]): T = xs match {
-    case List()  => throw new Error("last of empty list")
+    case List() => throw new Error("last of empty list")
     case List(x) => x
     case y :: ys => last(ys)
   }
 
   // Exercise: Implementation of 'init' (slides 8-9)
   def init[T](xs: List[T]): List[T] = xs match {
-    case List()  => throw new Error("init of empty list")
+    case List() => throw new Error("init of empty list")
     case List(x) => List()
     case y :: ys => y :: init(ys)
   }
 
   // Implementation of 'concat' (slides 10-14)
   def concat[T](xs: List[T], ys: List[T]): List[T] = xs match {
-    case List()  => ys
+    case List() => ys
     case z :: zs => z :: concat(zs, ys)
   }
 
   // Implementation of 'reverse' (slides 15-17)
   def reverse[T](xs: List[T]): List[T] = xs match {
-    case List()  => xs
+    case List() => xs
     case y :: ys => reverse(ys) ++ List(y)
   }
 
