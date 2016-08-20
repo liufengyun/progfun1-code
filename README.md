@@ -8,7 +8,7 @@ Pull requests are welcome!
 
 - Week 1: [@leanton](https://github.com/leanton)
 - Week 2: [@leanton](https://github.com/leanton)
-- Week 3: TODO
+- Week 3: [@leanton](https://github.com/leanton)
 - Week 4: TODO
 - Week 5: [@lbragaglia](https://github.com/lbragaglia)
 - Week 6: TODO
