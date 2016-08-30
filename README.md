@@ -11,4 +11,5 @@ Pull requests are welcome!
 - Week 3: [@leanton](https://github.com/leanton)
 - Week 4: [@leanton](https://github.com/leanton)
 - Week 5: [@lbragaglia](https://github.com/lbragaglia)
-- Week 6: TODO
+- Week 6: [@leanton](https://github.com/leanton)
+
